@@ -36,3 +36,13 @@ O posicionamento manual acontece sobre um plano horizontal de montagem, com enca
 Verificação sintática: `node --check placement.js`, `node --check hardware3d.js`, `node --check game.js`.
 
 O script `node qa-3d.cjs` conecta a uma instância de teste do Chrome com depuração na porta 9334 e esta página aberta. Use um perfil dedicado: o script limpa a montagem desse perfil e fecha o navegador ao terminar. Ele verifica arrastar nativo da biblioteca, encaixe por mouse, distância, rotação incorreta, pré-requisitos, devolução, montagem completa, POST, desmontagem, busca, categorias, persistência e largura móvel. As capturas ficam em `qa/in-hand.png` e `qa/manual-assembled.png`.
+
+## Modelos de referência e inspeção
+
+A biblioteca agora identifica ASUS Dual RTX 4060 OC, MSI MAG B550 TOMAHAWK, AMD Ryzen 5 5600, AMD Wraith Stealth, Kingston FURY Beast, WD_BLACK SN770 e Corsair CX650 CP-9020122. As fontes e os limites de fidelidade estão em `MODEL-REFERENCES.md` e no painel de cada peça.
+
+`hardware-models.js` constrói as geometrias, texturas procedurais e o ambiente de reflexos. `hardware3d.js` cuida da cena e da manipulação. `model-catalog.js` liga os componentes às referências de produto.
+
+Selecione uma peça e clique em **Ver peça de perto** para isolá-la. Arraste para orbitar, inclusive por baixo, e use a roda para aproximar. Q/E também giram a peça durante a inspeção. **Voltar à bancada** ou Esc restaura a câmera e a montagem anterior. Enquanto a inspeção estiver aberta, o posicionamento manual fica suspenso.
+
+A validação de navegador também verifica inspeção isolada, retorno à montagem e links de fabricantes, gerando `qa/gpu-reference.png` e `qa/cpu-reference.png`.

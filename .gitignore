@@ -1,1 +1,30 @@
-﻿.qa-browser*/
+﻿# Perfis temporários do navegador usados nos testes
+.qa-browser*/
+
+# Capturas e arquivos gerados pelos testes locais
+/qa/
+
+# Dependências e saídas de build
+node_modules/
+/dist/
+/build/
+/coverage/
+
+# Configurações locais e credenciais
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
